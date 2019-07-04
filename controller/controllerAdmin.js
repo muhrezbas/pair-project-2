@@ -1,4 +1,4 @@
-const {Admin} = require('../models/index')
+const {Admin, Pro, Peripheral} = require('../models/index')
 const bcrypt = require('bcrypt')
 class AdminController {
     static loginGet(req, res) {
@@ -46,6 +46,18 @@ class AdminController {
                 req.flash('error', err)
                 res.redirect('/admin/register')
             })
+    }
+
+    static show(req, res) {
+        Pro.findAll({
+            include:[Peripheral]
+        })
+        .then(data => {
+
+        })
+        .catch(err => {
+            res.send(err)
+        })
     }
 }
 
