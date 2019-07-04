@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+        <form action="/admin/dashboard/add-peripheral" method="POST">
+            Name: <br>
+            <input type="text" name="name" id=""><br>
+            Brand: <br>
+            <input type="text" name="brand" id=""><br>
+            Type: <br>
+            <select class="form-control" name="type" >
+                <option value="mouse">mouse</option>
+                <option value="keyboard">keyboard</option>
+                <option value="mousepad">mousepad</option>
+                <option value="monitor">monitor</option>
+                <option value="gpu">gpu</option>
+            </select>
+            <br>
+            <input class='btn btn-outline-primary' type='submit'
+            value='submit'>
+        </form>
+
+</body>
+
+</html>
