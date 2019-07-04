@@ -5,6 +5,10 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Pro.belongsToMany(models.Peripheral, { through: models.ProPeripheral });
     }
+    tambah(value,att){
+      
+      return value + ' ' + att
+    }
   }
   Pro.init({
     name: DataTypes.STRING,

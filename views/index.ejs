@@ -64,7 +64,7 @@
                       src="https://prosettings.net/icons/Team_Liquid_logo.svg"
                       style="height: 20px; width: 20px; vertical-align: 0.5px;" title=""> Team <%=data.team%></h2>
                   <hr class="x-gap" style="margin: 1px 0 0 0;">
-                  <p class="man"><%=data.name%> was born on <%=data.born%> and is currently playing for Team <%=data.team%> as a
+                  <p class="man"><%=data.name%> was born on <%=convertDate(data.born)%> and is currently playing for Team <%=data.team%> as a
                     <%=data.role%>.</p>
                   <hr class="x-gap" style="margin: 1px 0 0 0;"><a href="http://twitter.com/Stewie"> <i
                       class="x-icon x-icon-twitter"
@@ -118,7 +118,7 @@
 
                   <li class="x-block-grid-item">
                     <h4 style="margin: 0 0 0.35em; font-size: 1em; letter-spacing: 0.05em; line-height: 1;">HZ</h4>
-                    <p class="man"><%=data.hz%></p>
+                    <p class="man"><%=hertz%></p>
                   </li>
 
                   <li class="x-block-grid-item">

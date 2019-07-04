@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="/admin/dashboard/edit/<%=pro.id%>" method="POST">
+        <input type="text" value='<%=mouse%>' name="mouseId" id="" hidden>
+        <input type="text" value='<%=mousepad%>' name="mousepadId" id=""hidden>
+        <input type="text" value='<%=headset%>' name="headsetId" id=""hidden>
+        <input type="text" value='<%=gpu%>' name="gpuId" id=""hidden><br>
+        <input type="text" value='<%=keyboard%>' name="keyboardId" id=""hidden>
+        Name: <br>
+        <input value='<%=pro.name%>' type="text" name="name" id=""><br>
+        Born: <br>
+        <input value="<%=convertDay(pro.born)%>" type="date" name="born" id=""><br>
+        Team: <br>
+        <input value='<%=pro.team%>' type="text" name="team" id=""><br>
+        Role: <br>
+        <input value='<%=pro.role%>' type="text" name="role" id=""><br>
+        Mouse:
+        <select class="form-control" name="mouse">
+            <%per.forEach(element=>{%>
+            <%if(element.dataValues.type=="mouse"){%>
+            <% if(mouse===element.dataValues.id) {%>
+            <option selected value="<%= element.dataValues.id %>"><%=element.dataValues.name%></option>
+            <%} else {%>
+            <option value="<%= element.dataValues.id %>"><%=element.dataValues.name%></option>
+            <%}%>
+                <%}%>
+            <%})%>
+        </select>
+        <br>
+        Keyboard:
+        <select class="form-control" name="keyboard">
+            <%per.forEach(element=>{%>
+            <%if(element.dataValues.type=="keyboard"){%>
+            <% if(keyboard===element.dataValues.id) {%>
+            <option selected value="<%= element.dataValues.id %>"><%=element.dataValues.name%></option>
+            <%} else {%>
+            <option value="<%= element.dataValues.id %>"><%=element.dataValues.name%></option>
+            <%}%>
+              
+                <%}%>
+            <%})%>
+        </select>
+        <br>
+        Headset:
+        <select class="form-control" name="headset">
+            <%per.forEach(element=>{%>
+            <%if(element.dataValues.type=="headset"){%>
+            <% if(headset===element.dataValues.id) {%>
+            <option selected value="<%= element.dataValues.id %>"><%=element.dataValues.name%></option>
+            <%} else {%>
+            <option value="<%= element.dataValues.id %>"><%=element.dataValues.name%></option>
+            <%}%>
+                <%}%>
+            <%})%>
+        </select>
+        <br>
+        Gpu:
+        <select class="form-control" name="gpu">
+            <%per.forEach(element=>{%>
+            <%if(element.dataValues.type=="gpu"){%>
+            <% if(gpu===element.dataValues.id) {%>
+            <option selected value="<%= element.dataValues.id %>"><%=element.dataValues.name%></option>
+            <%} else {%>
+            <option value="<%= element.dataValues.id %>"><%=element.dataValues.name%></option>
+            <%}%>
+                <%}%>
+            <%})%>
+        </select>
+        <br>
+        Mousepad:
+        <select class="form-control" name="mousepad">
+            <%per.forEach(element=>{%>
+            <%if(element.dataValues.type=="mousepad"){%>
+            <% if(mousepad===element.dataValues.id) {%>
+            <option selected value="<%= element.dataValues.id %>"><%=element.dataValues.name%></option>
+            <%} else {%>
+            <option value="<%= element.dataValues.id %>"><%=element.dataValues.name%></option>
+            <%}%>
+                <%}%>
+            <%})%>
+        </select>
+        <br>
+        dpi: <br>
+        <input value='<%=pro.dpi%>' type="text" name="dpi" id=""><br>
+        edpi: <br>
+        <input value='<%=pro.edpi%>' type="text" name="edpi" id=""><br>
+        sensitivity: <br>
+        <input value='<%=pro.sensitivity%>' type="text" name="sensitivity" id=""><br>
+        hz: <br>
+        <input value='<%=pro.hz%>' type="text" name="hz" id=""><br>
+        Zoom sens: <br>
+        <input value='<%=pro.zoom_sens%>' type="text" name="zoom_sense" id=""><br>
+        Mouse acceleration: <br>
+        <input value='<%=pro.mouse_accel%>' type="text" name="mouse_accel" id=""><br>
+        raw input: <br>
+        <input value='<%=pro.raw_input%>' type="text" name="raw_input" id=""><br>
+        crosshair: <br>
+        <textarea name="crosshair" id="" cols="30" rows="10"><%=pro.crosshair%></textarea><br>
+        View model: <br>
+        <textarea name="view_model" id="" cols="30" rows="10"><%=pro.view_model%></textarea><br>
+        <br>
+        <input class='btn btn-outline-primary' type='submit' value='submit'>
+    </form>
+
+</body>
+
+</html>
