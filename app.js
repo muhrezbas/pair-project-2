@@ -1,5 +1,8 @@
 const express = require('express')
 const app = express()
+//req-flash and express-session
+const flash = require('req-flash')
+const session = require('express-session')
 const port = 3010
 const routerIndex = require('./routes/routesIndex')
 const routerAdmin = require('./routes/routesAdmin')
@@ -8,6 +11,8 @@ const routerPro = require('./routes/routesPro')
 app.set("view engine", "ejs")
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }));
+app.use(session({secret: '123'}))
+app.use(flash())
 app.use('/', routerIndex)
 app.use('/peripheral/', routerPeripheral)
 app.use('/pro/', routerPro)
