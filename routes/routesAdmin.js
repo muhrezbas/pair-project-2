@@ -8,7 +8,6 @@ router.get('/register', Controller.registerGet)
 router.get('/login', Controller.loginGet)
       .post('/login', Controller.loginPost)
 router.use((req,res,next) => {
-    console.log('masuk sini??')
     if (!req.session.admin) {
         res.redirect('/admin/login')
     }else{
