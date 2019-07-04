@@ -1,0 +1,1 @@
+console.log(new Date("September 8, 1995"))

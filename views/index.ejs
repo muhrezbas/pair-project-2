@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'
+    integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
+  <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'
+    integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM'
+    crossorigin='anonymous'></script>
+  <title>Small Business - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/small-business.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <%- include('./partials/navbar.ejs') %>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Heading Row -->
+    <div class="row align-items-center my-5">
+
+      <!-- /.col-lg-8 -->
+      <div class="col-lg-5">
+     
+        <!-- <a class="btn btn-primary" href="#">Call to Action!</a> -->
+      </div>
+      <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+
+ 
+
+    <!-- Content Row -->
+    <div class="entry-content content">
+
+
+      <div id="cs-content" class="cs-content">
+        <div id="x-section-1" class="x-section" style="margin: 0px;padding: 1% 0px; background-color: transparent;">
+          <div class="x-container max width" style="margin: 0px auto;padding: 0px;">
+            <div class="x-column x-sm x-1-3" style="padding: 0px; background-color:hsla(0, 0%, 0%, 0);">
+              <div class="x-promo man"
+                style="color:white;height: 80%;width: 80%;background-color: #2C3E50;border: solid #38414C;">
+                <div class="x-promo-image-wrap"><img
+                    src="https://prosettings.net/wp-content/uploads/2018/07/stewie2k-profile-picture.jpg"></div>
+                <div class="x-promo-content">
+                  <h1 class="h2 man" style="color: white; font-size: 1.4em;"><img
+                      src="https://prosettings.net/flags/usa.svg"
+                      style="height: 15px; width: 20px; vertical-align: 0.5px;" title=""> <%=data.name%></h1>
+                  <h2 class="h5 man" style="color: white; font-size: 1.4em;"><img
+                      src="https://prosettings.net/icons/Team_Liquid_logo.svg"
+                      style="height: 20px; width: 20px; vertical-align: 0.5px;" title=""> Team <%=data.team%></h2>
+                  <hr class="x-gap" style="margin: 1px 0 0 0;">
+                  <p class="man"><%=data.name%> was born on <%=data.born%> and is currently playing for Team <%=data.team%> as a
+                    <%=data.role%>.</p>
+                  <hr class="x-gap" style="margin: 1px 0 0 0;"><a href="http://twitter.com/Stewie"> <i
+                      class="x-icon x-icon-twitter"
+                      style="text-align: center;      color:white; margin: 0 2px; font-size: 1.75em;" data-x-icon-b=""
+                      aria-hidden="true"></i> </a><a href="http://www.twitch.tv/stewie2k"> <i
+                      class="x-icon x-icon-twitch"
+                      style="text-align: center;       color:white; margin: 0 2px; font-size: 1.75em;" data-x-icon-b=""
+                      aria-hidden="true"></i> </a><a href="http://facebook.com/Stewie2k"> <i
+                      class="x-icon x-icon-facebook"
+                      style="text-align: center;       color:white; margin: 0 2px; font-size: 1.75em;" data-x-icon-b=""
+                      aria-hidden="true"></i> </a><a href="http://steamcommunity.com/profiles/76561197999004010"> <i
+                      class="x-icon x-icon-steam"
+                      style="text-align: center;      color:white; margin: 0 2px; font-size: 1.75em;" data-x-icon-b=""
+                      aria-hidden="true"></i> </a>
+                  <p></p>
+                </div>
+              </div>
+              <hr class="x-gap cs-hide-xl cs-hide-lg" style="margin: 40px 0 0 0;">
+            </div>
+            <div class="x-column x-sm x-2-3"
+              style="padding: 15px;border-style: solid;border-width: 2px;border-color: hsl(0, 0%, 88%); background-color:hsl(0, 0%, 97%);">
+              <h2 class="h-custom-headline h5"
+                style="margin: 0 0 0.75em;border-bottom: 1px solid rgba(0, 0, 0, 0.125);padding: 0 0 0.75em;font-size: 1.2em;letter-spacing: 0.05em;text-transform: uppercase;">
+                <span>Mouse Settings – <a href="https://amzn.to/2GoseSS" target="_blank" style="color:#e74c3c"
+                    rel="noopener noreferrer">
+                
+                    <% data.Peripherals.forEach((per) => {%>
+                      <%if (per.type==="mouse") {%>
+                      <%=per.brand + " " + per.name %>
+                      <% }%>
+                      <% }) %>
+                  </a></span></h2>
+              <div class="e1285-8 x-bar-content-area">
+                <ul class="x-block-grid four-up">
+                  <li class="x-block-grid-item">
+                    <h3 style="margin: 0 0 0.35em; font-size: 1em; letter-spacing: 0.05em; line-height: 1;">DPI</h3>
+
+                    <p class="man"><%=data.dpi%></p>
+                  </li>
+                  <li class="x-block-grid-item">
+                    <h4 style="margin: 0 0 0.35em; font-size: 1em; letter-spacing: 0.05em; line-height: 1;">Sensitivity
+                    </h4>
+
+                    <p class="man"><%=data.sensitivity%></p>
+                  </li>
+                  <li class="x-block-grid-item">
+                    <h4 style="margin: 0 0 0.35em; font-size: 1em; letter-spacing: 0.05em; line-height: 1;">eDPI</h4>
+
+                    <p class="man"><%=data.edpi%></p>
+                  </li>
+
+                  <li class="x-block-grid-item">
+                    <h4 style="margin: 0 0 0.35em; font-size: 1em; letter-spacing: 0.05em; line-height: 1;">HZ</h4>
+                    <p class="man"><%=data.hz%></p>
+                  </li>
+
+                  <li class="x-block-grid-item">
+                    <h4 style="margin: 0 0 0.35em; font-size: 1em; letter-spacing: 0.05em; line-height: 1;">Zoom
+                      Sensitivity</h4>
+                    <p class="man"><%=data.zoom_sens%></p>
+                  </li>
+
+                  <li class="x-block-grid-item">
+                    <h4 style="margin: 0 0 0.35em; font-size: 1em; letter-spacing: 0.05em; line-height: 1;">Mouse Accel
+                    </h4>
+                    <p class="man"><%=data.mouse_accel%></p>
+                  </li>
+                  <li class="x-block-grid-item">
+                    <h4 style="margin: 0 0 0.35em; font-size: 1em; letter-spacing: 0.05em; line-height: 1;">Raw input
+                    </h4>
+                    <p class="man"><%=data.raw_input%></p>
+                  </li>
+                </ul>
+              </div>
+             
+              <h2 class="h-custom-headline h5"
+                style="margin: 0 0 0.75em;border-bottom: 1px solid rgba(0, 0, 0, 0.125);padding: 0 0 0.75em;font-size: 1.2em;letter-spacing: 0.05em;text-transform: uppercase;">
+                <span>Crosshair</span></h2>
+              <div class="e1285-12 x-bar-content-area">
+                <pre
+                  class="x-code"><code><%=data.crosshair%></code></pre>
+              </div>
+              <h2 class="h-custom-headline h5"
+                style="margin: 0 0 0.75em;border-bottom: 1px solid rgba(0, 0, 0, 0.125);padding: 0 0 0.75em;font-size: 1.2em;letter-spacing: 0.05em;text-transform: uppercase;">
+                <span>Viewmodel</span></h2>
+              <div class="e1285-14 x-bar-content-area">
+                <pre class="x-code"><code><%=data.view_model%>
+      </code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="x-section-2" class="x-section cs-ta-center"
+          style="margin: 0px;padding: 0px; background-color: transparent;">
+          <div class="x-container max width" style="margin: 0px auto;padding: 0px;">
+            <div class="x-column x-sm x-1-1" style="padding: 0px 0px 30px;">
+              <h2 class="h-custom-headline h3 accent"><span>Gear – Click to check!</span></h2>
+            </div>
+          </div>
+          <div class="x-container max width" style="margin: 0px auto;padding: 0px;">
+            <div class="x-column x-sm x-1-6" style="padding: 0px;">
+              <h3 class="h-custom-headline h5"
+                style="margin: 0 0 0.75em;border-bottom: 1px solid rgba(0, 0, 0, 0.125);padding: 0 0 0.75em;font-size: 1.2em;letter-spacing: 0.05em;text-transform: uppercase;">
+                <span>Monitor</span></h3><a class="x-img gear x-img-link x-img-thumbnail" href="https://amzn.to/2E4lvuF"
+                target="_blank"
+                data-options="thumbnail: 'https://prosettings.net/wp-content/uploads/2018/03/Alienware-AW2158H-240-HZ.jpg'"><img
+                  src="https://prosettings.net/wp-content/uploads/2018/03/Alienware-AW2158H-240-HZ.jpg"></a>
+              <h3 class="h-custom-headline h5"
+                style="margin: 0 0 0.75em;padding: 0 0 0.75em;font-size: 1.2em;letter-spacing: 0.05em;text-transform: uppercase;">
+                <span><a href="https://amzn.to/2E4lvuF" target="_blank" style="color:#e74c3c"
+                    rel="noopener noreferrer">
+                    <% data.Peripherals.forEach((per) => {%>
+                      <%if (per.type==="monitor") {%>
+                      <%=per.brand + " " + per.name %>
+                      <% }%>
+                      <% }) %></a></span></h3>
+            </div>
+            <div class="x-column x-sm x-1-6" style="padding: 0px;">
+              <h3 class="h-custom-headline h5"
+                style="margin: 0 0 0.75em;border-bottom: 1px solid rgba(0, 0, 0, 0.125);padding: 0 0 0.75em;font-size: 1.2em;letter-spacing: 0.05em;text-transform: uppercase;">
+                <span>Mouse</span></h3><a class="x-img gear x-img-link x-img-thumbnail" href="https://amzn.to/2GoseSS"
+                target="_blank"
+                data-options="thumbnail: 'https://prosettings.net/wp-content/uploads/2017/03/Unbenannt-31.jpg'"><img
+                  src="https://prosettings.net/wp-content/uploads/2017/03/Unbenannt-31.jpg"></a>
+              <h3 class="h-custom-headline h5"
+                style="margin: 0 0 0.75em;padding: 0 0 0.75em;font-size: 1.2em;letter-spacing: 0.05em;text-transform: uppercase;">
+                <span><a href="https://amzn.to/2GoseSS" target="_blank" style="color:#e74c3c"
+                    rel="noopener noreferrer">
+                    <% data.Peripherals.forEach((per) => {%>
+                      <%if (per.type==="mouse") {%>
+                      <%=per.brand + " " + per.name %>
+                      <% }%>
+                      <% }) %></a></span></h3>
+            </div>
+            <div class="x-column x-sm x-1-6" style="padding: 0px;">
+              <h3 class="h-custom-headline h5"
+                style="margin: 0 0 0.75em;border-bottom: 1px solid rgba(0, 0, 0, 0.125);padding: 0 0 0.75em;font-size: 1.2em;letter-spacing: 0.05em;text-transform: uppercase;">
+                <span>Mousepad</span></h3><a class="x-img gear x-img-link x-img-thumbnail"
+                href="https://amzn.to/2X3bIwn" target="_blank"
+                data-options="thumbnail: 'https://prosettings.net/wp-content/uploads/2017/03/Unbenannt-8.jpg'"><img
+                  src="https://prosettings.net/wp-content/uploads/2017/03/Unbenannt-8.jpg"></a>
+              <h3 class="h-custom-headline h5"
+                style="margin: 0 0 0.75em;padding: 0 0 0.75em;font-size: 1.2em;letter-spacing: 0.05em;text-transform: uppercase;">
+                <span><a href="https://amzn.to/2X3bIwn" target="_blank" style="color:#e74c3c"
+                    rel="noopener noreferrer">
+                    <% data.Peripherals.forEach((per) => {%>
+                      <%if (per.type==="mousepad") {%>
+                      <%=per.brand + " " + per.name %>
+                      <% }%>
+                      <% }) %></a></span></h3>
+            </div>
+            <div class="x-column x-sm x-1-6" style="padding: 0px;">
+              <h3 class="h-custom-headline h5"
+                style="margin: 0 0 0.75em;border-bottom: 1px solid rgba(0, 0, 0, 0.125);padding: 0 0 0.75em;font-size: 1.2em;letter-spacing: 0.05em;text-transform: uppercase;">
+                <span>Keyboard</span></h3><a class="x-img gear x-img-link x-img-thumbnail"
+                href="https://amzn.to/2UVe9PR" target="_blank"
+                data-options="thumbnail: 'https://prosettings.net/wp-content/uploads/2017/03/HyperX-Alloy-FPS.jpg'"><img
+                  src="https://prosettings.net/wp-content/uploads/2017/03/HyperX-Alloy-FPS.jpg"></a>
+              <h3 class="h-custom-headline h5"
+                style="margin: 0 0 0.75em;padding: 0 0 0.75em;font-size: 1.2em;letter-spacing: 0.05em;text-transform: uppercase;">
+                <span><a href="https://amzn.to/2UVe9PR" target="_blank" style="color:#e74c3c"
+                    rel="noopener noreferrer">
+                    <% data.Peripherals.forEach((per) => {%>
+                      <%if (per.type==="keyboard") {%>
+                      <%=per.brand + " " + per.name %>
+                      <% }%>
+                      <% }) %></a></span></h3>
+            </div>
+            <div class="x-column x-sm x-1-6" style="padding: 0px;">
+              <h3 class="h-custom-headline h5"
+                style="margin: 0 0 0.75em;border-bottom: 1px solid rgba(0, 0, 0, 0.125);padding: 0 0 0.75em;font-size: 1.2em;letter-spacing: 0.05em;text-transform: uppercase;">
+                <span>Headset</span></h3><a class="x-img gear x-img-link x-img-thumbnail" href="https://amzn.to/2Ef9faG"
+                target="_blank"
+                data-options="thumbnail: 'https://prosettings.net/wp-content/uploads/2019/05/Alienware-AW988-Wireless-Headset.jpg'"><img
+                  src="https://prosettings.net/wp-content/uploads/2019/05/Alienware-AW988-Wireless-Headset.jpg"></a>
+              <h3 class="h-custom-headline h5"
+                style="margin: 0 0 0.75em;padding: 0 0 0.75em;font-size: 1.2em;letter-spacing: 0.05em;text-transform: uppercase;">
+                <span><a href="https://amzn.to/2Ef9faG" target="_blank" style="color:#e74c3c"
+                    rel="noopener noreferrer">
+                    <% data.Peripherals.forEach((per) => {%>
+                      <%if (per.type==="headset") {%>
+                      <%=per.brand + " " + per.name %>
+                      <% }%>
+                      <% }) %></a></span></h3>
+            </div>
+            <div class="x-column x-sm x-1-6" style="padding: 0px;">
+              <h3 class="h-custom-headline h5"
+                style="margin: 0 0 0.75em;border-bottom: 1px solid rgba(0, 0, 0, 0.125);padding: 0 0 0.75em;font-size: 1.2em;letter-spacing: 0.05em;text-transform: uppercase;">
+                <span>GPU</span></h3><a class="x-img gear x-img-link x-img-thumbnail" href="https://amzn.to/2WXRpk4"
+                target="_blank"
+                data-options="thumbnail: 'https://prosettings.net/wp-content/uploads/2018/05/GeForce-GTX-1080TI-Founders-Edition-Graphics-Card.jpg'"><img
+                  src="https://prosettings.net/wp-content/uploads/2018/05/GeForce-GTX-1080TI-Founders-Edition-Graphics-Card.jpg"></a>
+              <h3 class="h-custom-headline h5"
+                style="margin: 0 0 0.75em;padding: 0 0 0.75em;font-size: 1.2em;letter-spacing: 0.05em;text-transform: uppercase;">
+                <span><a href="https://amzn.to/2WXRpk4" target="_blank" style="color:#e74c3c"
+                    rel="noopener noreferrer">
+                    <% data.Peripherals.forEach((per) => {%>
+                      <%if (per.type==="gpu") {%>
+                      <%=per.brand + " " + per.name %>
+                      <% }%>
+                      <% }) %></a></span></h3>
+            </div>
+          </div>
+        </div>
+        <div id="x-section-3" class="x-section cs-ta-center"
+          style="margin: 0px;padding: 0px; background-color: transparent;">
+          <div class="x-container max width" style="margin: 0px auto;padding: 0px;">
+            <div class="x-column x-sm x-1-1" style="padding: 0px 0px 30px;">
+              <h2 class="h-custom-headline h3 accent"><span>Teammates</span></h2>
+            </div>
+          </div>
+          <div class="x-container max width" style="margin: 0px auto;padding: 0px;">
+            <div class="x-column x-sm x-1-4" style="padding: 0px;">
+              <div class="x-promo man">
+                <div class="x-promo-image-wrap"><img
+                    src="https://prosettings.net/wp-content/uploads/2019/02/naf-profile-picture-2.png"></div>
+                <div class="x-promo-content">
+                  <h3 class="man"><a href="https://prosettings.net/counterstrike/naf">NAF</a></h3>
+                </div>
+              </div>
+              <hr class="x-gap cs-hide-xl cs-hide-lg cs-hide-md" style="margin: 45px 0 0 0;">
+            </div>
+            <div class="x-column x-sm x-1-4" style="padding: 0px;">
+              <div class="x-promo man">
+                <div class="x-promo-image-wrap"><img
+                    src="https://prosettings.net/wp-content/uploads/2019/02/nitr0-profile-picture-2.png"></div>
+                <div class="x-promo-content">
+                  <h3 class="man"><a href="https://prosettings.net/counterstrike/nitr0">nitr0</a></h3>
+                </div>
+              </div>
+              <hr class="x-gap cs-hide-xl cs-hide-lg cs-hide-md" style="margin: 45px 0 0 0;">
+            </div>
+            <div class="x-column x-sm x-1-4" style="padding: 0px;">
+              <div class="x-promo man">
+                <div class="x-promo-image-wrap"><img
+                    src="https://prosettings.net/wp-content/uploads/2019/02/twistzz-profile-picture-2.png"></div>
+                <div class="x-promo-content">
+                  <h3 class="man"><a href="https://prosettings.net/counterstrike/twistzz">Twistzz</a></h3>
+                </div>
+              </div>
+            </div>
+            <div class="x-column x-sm x-1-4" style="padding: 0px;">
+              <div class="x-promo man">
+                <div class="x-promo-image-wrap"><img
+                    src="https://prosettings.net/wp-content/uploads/2019/02/elige-profile-picture-2.png"></div>
+                <div class="x-promo-content">
+                  <h3 class="man"><a href="https://prosettings.net/counterstrike/elige">ELiGE</a></h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

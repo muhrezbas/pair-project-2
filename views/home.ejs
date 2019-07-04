@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'
+        integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'
+        integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM'
+        crossorigin='anonymous'></script>
+    <title></title>
+</head>
+
+<body class='container'>
+    <%- include('./partials/navbar.ejs') %>
+    <% let capTitle = title.charAt(0).toUpperCase() + title.substr(1) %>
+    <header class='container'>
+        <h1 class='text-center'><%= capTitle %> Data</h1>
+    </header>
+    <div>
+        <table class='table'>
+            <thead>
+                <% header.forEach(oneHeader => { %>
+                <th scope='col'><%= oneHeader %></th>
+                <% }) %>
+            </thead>
+            <tbody>
+                <% data.forEach((oneRecord,index) => { %>
+                <tr>
+                    <% let record = oneRecord.dataValues%>
+                    <td><%= index +1%></td>
+                    <td><a href ="/player/<%=record.id%>"><%= record.name%></a></td>
+                    <td><%= record.team%></td>
+                    <td><%= record.dpi%></td>
+                    <td><%= record.hz%></td>
+                    <td><%= record.sensitivity%></td>
+                    <td><%= record.zoom_sens%></td>
+                    <td><%= record.mouse_accel%></td>
+                    <td><%= record.raw_input%></td>
+                    <td>
+                        <% record.Peripherals.forEach((per) => {%>
+                        <%if (per.type==="mouse") {%>
+                        <%=per.brand + " " + per.name %>
+                        <% }%>
+                        <% }) %>
+                    </td>
+                    <td>
+                        <% record.Peripherals.forEach((per) => {%>
+                        <%if (per.type==="mousepad") {%>
+                        <%=per.brand + " " + per.name %>
+                        <% }%>
+                        <% }) %>
+                    </td>
+                    <td>
+                        <% record.Peripherals.forEach((per) => {%>
+                        <%if (per.type==="keyboard") {%>
+                        <%=per.brand + " " + per.name %>
+                        <% }%>
+                        <% }) %>
+                    </td>
+                    <td>
+                        <% record.Peripherals.forEach((per) => {%>
+                        <%if (per.type==="headset") {%>
+                        <%=per.brand + " " + per.name %>
+                        <% }%>
+                        <% }) %>
+                    </td>
+                    <td><a href="">crosshair of <%= record.name %></a></td>
+                    <td><a href="">view model of <%= record.name %></a></td>
+
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        <h3 class='text-center'><a href='/'>Back to Homepage</a></h3>
+    </div>
+</body>
+
+</html>
