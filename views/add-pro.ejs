@@ -1,20 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-    <center>
-        <form action="" method="POST">
+
+        <form action="/admin/dashboard/add" method="POST">
             Name: <br>
             <input type="text" name="name" id=""><br>
             Born: <br>
             <input type="date" name="born" id=""><br>
             Team: <br>
             <input type="text" name="team" id=""><br>
+            Role: <br>
+            <input type="text" name="role" id=""><br>
+            Mouse:
+            <select class="form-control" name="mouse" >
+                <%data.forEach(element=>{%>
+                <%if(element.dataValues.type=="mouse"){%>
+                <option value="<%= element.dataValues.id %>"><%=element.dataValues.name%></option>
+                <%}%>
+                     <%})%>
+            </select>
+            <br>
+            Keyboard:
+            <select class="form-control" name="keyboard" >
+                <%data.forEach(element=>{%>
+                <%if(element.dataValues.type=="keyboard"){%>
+                <option value="<%= element.dataValues.id %>"><%=element.dataValues.name%></option>
+                <%}%>
+                           <%})%>
+            </select>
+            <br>
+            Headset:
+            <select class="form-control" name="headset" >
+                <%data.forEach(element=>{%>
+                <%if(element.dataValues.type=="headset"){%>
+                <option value="<%= element.dataValues.id %>"><%=element.dataValues.name%></option>
+                <%}%>
+                     <%})%>
+            </select>
+            <br>
+            Gpu:
+            <select class="form-control" name="gpu" >
+                <%data.forEach(element=>{%>
+                <%if(element.dataValues.type=="gpu"){%>
+                <option value="<%= element.dataValues.id %>"><%=element.dataValues.name%></option>
+                <%}%>
+                           <%})%>
+            </select>
+            <br>
+            Mousepad:
+            <select class="form-control" name="mousepad" >
+                <%data.forEach(element=>{%>
+                <%if(element.dataValues.type=="mousepad"){%>
+                <option value="<%= element.dataValues.id %>"><%=element.dataValues.name%></option>
+                <%}%>
+                     <%})%>
+            </select>
+            <br>
             dpi: <br>
             <input type="text" name="dpi" id=""><br>
             edpi: <br>
@@ -32,10 +81,12 @@
             crosshair: <br>
             <textarea name="crosshair" id="" cols="30" rows="10"></textarea><br>
             View model: <br>
-            <input type="text" name="view_model" id=""><br>
+            <textarea name="view_model" id="" cols="30" rows="10"></textarea><br>
             <br>
-            <input type="submit" value="submit">
+            <input class='btn btn-outline-primary' type='submit'
+            value='submit'>
         </form>
-    </center>
+
 </body>
+
 </html>

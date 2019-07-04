@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'
+        integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' crossorigin='anonymous'>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'
+        integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM'
+        crossorigin='anonymous'></script>
     <style>
         table {
             font-family: arial, sans-serif;
@@ -24,7 +29,8 @@
     <title>Document</title>
 </head>
 <body>
-    <%-include('partials/navbar')%>
+    <a href="/admin/dashboard/add">add pro player</a>
+    <a href="/admin/dashboard/add-peripheral">add peripheral</a>
         <table>
                 <tr>
                   <th>Name</th>
@@ -57,7 +63,7 @@
                     <th><%=pro.raw_input%></th>
                     <th><%=pro.crosshair%></th>
                     <th><%=pro.view_model%></th>
-                    <th><a href="/admin/delete/<%= pro.id%>">delete</a></th>
+                    <th><a href="/admin/dashboard/delete/<%= pro.id%>">delete</a></th>
 
                 </tr>
             <%})%>
