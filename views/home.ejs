@@ -10,6 +10,9 @@
     <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'
         integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM'
         crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <title></title>
 </head>
 
@@ -31,7 +34,7 @@
                 <tr>
                     <% let record = oneRecord.dataValues%>
                     <td><%= index +1%></td>
-                    <td><a href ="/player/<%=record.id%>"><%= record.name%></a></td>
+                    <td><a href="/player/<%=record.id%>"><%= record.name%></a></td>
                     <td><%= record.team%></td>
                     <td><%= record.dpi%></td>
                     <td><%= record.hz%></td>
@@ -67,9 +70,47 @@
                         <% }%>
                         <% }) %>
                     </td>
-                    <td><a href="">crosshair of <%= record.name %></a></td>
-                    <td><a href="">view model of <%= record.name %></a></td>
-
+                    <td> <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal<%=record.id%>">crosshair of <%= record.name %></button></td>
+                    <td> <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal2<%=record.id%>">viewModel of <%= record.name %></button></td>
+  <!-- Trigger the modal with a button -->
+  <!-- Modal -->
+  <div class="modal fade" id="myModal<%=record.id%>" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">crosshair of <%= record.name %></h4>
+        </div>
+        <div class="modal-body">
+                <code><%=record.crosshair%></code>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal2<%=record.id%>" role="dialog">
+        <div class="modal-dialog">
+        
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">crosshair of <%= record.name %></h4>
+            </div>
+            <div class="modal-body">
+                    <code><%=record.view_model%></code>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+          
+        </div>
+      </div>
                 </tr>
                 <% }) %>
             </tbody>

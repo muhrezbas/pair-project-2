@@ -8,32 +8,17 @@ module.exports = {
 
       Example:
       return queryInterface.bulkInsert('Person', [{
-        name: 'John Doe',
+        ProId: 'John Doe',
         isBetaMember: false
       }], {});
     */
 
 		return queryInterface.bulkInsert(
-			"Peripherals",
+			"ProPeripherals",
 			[
 				{
-					name: "AW2518H",
-					brand: "alienware",
-					type: "monitor",
-					createdAt: new Date(),
-					updatedAt: new Date()
-				},
-				{
-					name: "QCK+",
-					brand: "steelseries",
-					type: "mousepad",
-					createdAt: new Date(),
-					updatedAt: new Date()
-        },
-        {
-					name: "geforce 1080 TI",
-					brand: "nvidia",
-					type: "gpu",
+					ProId: 1,
+					PeripheralId: 8,
 					createdAt: new Date(),
 					updatedAt: new Date()
         }
@@ -51,6 +36,6 @@ module.exports = {
       return queryInterface.bulkDelete('Person', null, {});
     */
 
-		return queryInterface.bulkDelete("Peripherals", null, {});
+		return queryInterface.bulkDelete("ProPeripherals", null, {});
 	}
 };

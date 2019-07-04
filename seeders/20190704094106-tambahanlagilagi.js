@@ -17,26 +17,12 @@ module.exports = {
 			"Peripherals",
 			[
 				{
-					name: "AW2518H",
+					name: "AW988",
 					brand: "alienware",
-					type: "monitor",
+					type: "headset",
 					createdAt: new Date(),
 					updatedAt: new Date()
-				},
-				{
-					name: "QCK+",
-					brand: "steelseries",
-					type: "mousepad",
-					createdAt: new Date(),
-					updatedAt: new Date()
-        },
-        {
-					name: "geforce 1080 TI",
-					brand: "nvidia",
-					type: "gpu",
-					createdAt: new Date(),
-					updatedAt: new Date()
-        }
+				}
 			],
 			{}
 		);
