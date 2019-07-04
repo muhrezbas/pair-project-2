@@ -1,12 +1,16 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Peripheral = sequelize.define('Peripheral', {
+
+  const Model = sequelize.Sequelize.Model
+  class Peripheral extends Model {
+    static associate(models) {
+      Peripheral.belongsToMany(models.Pro, { through: models.ProPeripheral });
+    }
+  }
+  Peripheral.init({
     name: DataTypes.STRING,
     brand: DataTypes.STRING,
     type: DataTypes.STRING
-  }, {});
-  Peripheral.associate = function(models) {
-    // associations can be defined here
-  };
+  }, { sequelize })
   return Peripheral;
 };

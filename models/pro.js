@@ -1,6 +1,12 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const Pro = sequelize.define('Pro', {
+  const Model = sequelize.Sequelize.Model
+  class Pro extends Model {
+    static associate(models) {
+      Pro.belongsToMany(models.Peripheral, { through: models.ProPeripheral });
+    }
+  }
+  Pro.init({
     name: DataTypes.STRING,
     born: DataTypes.DATE,
     team: DataTypes.STRING,
@@ -14,9 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     crosshair: DataTypes.STRING,
     view_model: DataTypes.STRING,
     role: DataTypes.STRING
-  }, {});
-  Pro.associate = function(models) {
-    // associations can be defined here
-  };
+  }, { sequelize });
   return Pro;
 };
+

@@ -1,0 +1,15 @@
+const express = require('express')
+const app = express()
+const port = 3010
+const routerIndex = require('./routes/routesIndex')
+const routerAdmin = require('./routes/routesAdmin')
+const routerPeripheral = require('./routes/routesPeripheral')
+const routerPro = require('./routes/routesPro')
+app.set("view engine", "ejs")
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }));
+app.use('/', routerIndex)
+app.use('/peripheral/', routerPeripheral)
+app.use('/pro/', routerPro)
+app.use('/admin/', routerAdmin)
+app.listen(port, () => console.log(`Example app listening on port port!`))
