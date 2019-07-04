@@ -4,9 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        }
+
+        tr:nth-child(even) {
+        background-color: #dddddd;
+        }
+    </style>
     <title>Document</title>
 </head>
 <body>
-    
+    <%-include('partials/navbar')%>
+        <table>
+                <tr>
+                  <th>Name</th>
+                  <th>Born</th>
+                  <th>Team</th>
+                  <th>Role</th>
+                  <th>dpi</th>
+                  <th>edpi</th>
+                  <th>Sensitivity</th>
+                  <th>hz</th>
+                  <th>Zoom sens</th>
+                  <th>Mouse acceleration</th>
+                  <th>Raw Input</th>
+                  <th>crosshair</th>
+                  <th>View Model</th>
+                  <th>action</th>
+                </tr>
+            <%data.forEach(pro => {%>
+                <tr>
+                    <th><%=pro.name%></th>
+                    <th><%=pro.born%></th>
+                    <th><%=pro.team%></th>
+                    <th><%=pro.role%></th>
+                    <th><%=pro.dpi%></th>
+                    <th><%=pro.edpi%></th>
+                    <th><%=pro.sensitivity%></th>
+                    <th><%=pro.hz%></th>
+                    <th><%=pro.zoom_sens%></th>
+                    <th><%=pro.mouse_accel%></th>
+                    <th><%=pro.raw_input%></th>
+                    <th><%=pro.crosshair%></th>
+                    <th><%=pro.view_model%></th>
+                    <th><a href="/admin/delete/<%= pro.id%>">delete</a></th>
+
+                </tr>
+            <%})%>
+                
+        </table>
+              
 </body>
 </html>

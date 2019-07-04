@@ -19,6 +19,9 @@ class AdminController {
                 if (!comparePass) {
                     throw new Error('email and password doesn\'t match')
                 }else {
+                    req.session.admin = {
+                        id: user.id
+                    }
                     res.render('admin', {user})
                 }
             }
@@ -53,11 +56,33 @@ class AdminController {
             include:[Peripheral]
         })
         .then(data => {
-
+            res.render('admin',{data})
         })
         .catch(err => {
             res.send(err)
         })
+    }
+
+    static delete(req, res) {
+        Pro.destroy({
+            where:{
+                id:req.params.id
+            }
+        })
+        .then(num => {
+            res.redirect('/admin/dashboard')
+        })
+        .catch(err => {
+            res.send(err)
+        })
+    }
+
+    static addProGet(req, res) {
+        res.render('add-pro')
+    }
+
+    static addProPost(req, res) {
+        console.log(req.body)
     }
 }
 

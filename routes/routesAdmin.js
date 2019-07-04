@@ -8,5 +8,8 @@ router.get('/login', Controller.loginGet)
 
 router.get('/register', Controller.registerGet)
       .post('/register', Controller.registerPost)
-
+router.get('/dashboard',Controller.show)
+router.get('/dashboard/delete/:id', Controller.delete)
+router.get('/dashboard/add', Controller.addProGet)
+      .post('/dashboard/add', Controller.addProPost)
 module.exports = router
