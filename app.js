@@ -3,7 +3,7 @@ const app = express()
 //req-flash and express-session
 const flash = require('req-flash')
 const session = require('express-session')
-const port = 3010
+const port = process.env.PORT || 3010 
 const routerIndex = require('./routes/routesIndex')
 const routerAdmin = require('./routes/routesAdmin')
 const routerPeripheral = require('./routes/routesPeripheral')
