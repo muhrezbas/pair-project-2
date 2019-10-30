@@ -18,6 +18,6 @@
     "express-session": "^1.16.2",
     "pg": "^7.11.0",
     "req-flash": "0.0.3",
-    "sequelize": "^5.9.2"
+    "sequelize": "^5.15.1"
   }
 }
